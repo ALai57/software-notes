@@ -1,0 +1,76 @@
+#+TITLE: 001 Escaping Monolithic Hell
+
+This chapter introduces Food To Go (FTG), the fictional company used to motivate the the content of each book chapter. In Chapter 1, Mary, the CTO, is trying to solve FTG's technical problems, which include slower delivery and missed releases.
+
+FTG's business is providing an application where restaurants display their menu, customers place food orders, and couriers deliver the food.
+
+FTG's core application:
+1) allows customers to place food orders at local restaurants.
+2) coordinates a network of couriers to deliver the order
+3) pays the couriers and restaurants
+4) allows restaurants to manage their menus
+5) allows restaurants to manage their orders
+
+FTG's core application is a Big Ball of Mud (http://laputan.org/mud), a `haphazardly structured, sprawling, sloppy, duct-tape and bailing wire, spaghetti code jungle.`
+
+* Big Ball of Mud: Haphazardly structured spaghetti code jungle
+Why are so many existing systems architecturaly undistinguished, and what can we do to improve them?
+
+What causes software to be amorphous, difficult to understand code?
+
+Sometimes, we just don't understand the problem that well when we start building. Often, pepole earn a better understanding of what the architecture _should be_ by working on a problem for a while.
+
+
+** Forces
+What are the forces that influence the creation of a ball of mud?
+
+*Time*: Sometimes you don't have time to consider long-term architectural implications.
+
+*Cost*: You need to invest in architecture to get it right, and it pays off over time, not immediately. That can be a hard sell.
+
+*Experience and skill:*  You need the right people working on architecture. Not all coders are good architects, or even want to be involved in architecture.
+
+*Change*: Requirements change over time, and often, the assumptions we use when designing are violated by future requirements.
+
+Passivity in the face of these forces can lead to the Big Ball of Mud.
+
+Kent Beck on building software "Make it work. Make it right. Make it fast."
+It's OK for a system to look like a Big Ball of Mud, at least until you know better.
+
+** Fighting the mud
+*** Keep the system healthy
+Lifecycle and refactoring patterns that support evolution and reuse
+`http://www.laputan.org/lifecycle/lifecycle.html`
+
+Prototype phase
+Exansion phase
+Consolidation phase
+
+Which is basically Extreme programming (Kent Beck, `https://ronjeffries.com`)
+
+Pair programming!
+*** Reconstruction/rewrite
+*** Give in to the dark side...
+
+
+*** Throwaway code
+Sometimes, quick and dirty code (that was never meanted to be used more than once) grows and grows.
+
+*** Piecemeal growth
+Changing requirements, or, in the Agile process, new features, can cause the architecture to erode over time
+
+*** Keep it working
+A major emergency requiring patching
+
+*** Shearing layers
+Elements of the software system evolving at different rates
+
+*** Sweeping it under the rug
+A method to control decline. Put a facade around bad code, and cordon it off.
+
+*** Reconstruction
+Rebuild the whole damn thing.
+
+
+
+_Monolithic Hell_:
