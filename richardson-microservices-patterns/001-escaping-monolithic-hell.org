@@ -4,24 +4,28 @@ This chapter introduces Food To Go (FTG), the fictional company used to motivate
 
 FTG's business is providing an application where restaurants display their menu, customers place food orders, and couriers deliver the food.
 
-FTG's core application:
+* FTG's core application:
 1) allows customers to place food orders at local restaurants.
 2) coordinates a network of couriers to deliver the order
 3) pays the couriers and restaurants
 4) allows restaurants to manage their menus
 5) allows restaurants to manage their orders
 
-FTG's core application is a Big Ball of Mud (http://laputan.org/mud), a `haphazardly structured, sprawling, sloppy, duct-tape and bailing wire, spaghetti code jungle.`
+FTG's core application is a monolith, and it's architectural style is a Hexagonal.
+The monolith initially served the company well, allowing for fast deploys and easy scaling. But at some point, FTG outgrew the monolith and this architecture started slowing down deployment, testing, etc. This happened as the team and application size grew.
 
-* Big Ball of Mud: Haphazardly structured spaghetti code jungle
+In addition, it is a Big Ball of Mud (http://laputan.org/mud), a `haphazardly structured, sprawling, sloppy, duct-tape and bailing wire, spaghetti code jungle.`
+
+** Big Ball of Mud: Haphazardly structured spaghetti code jungle
 Why are so many existing systems architecturaly undistinguished, and what can we do to improve them?
 
 What causes software to be amorphous, difficult to understand code?
 
 Sometimes, we just don't understand the problem that well when we start building. Often, pepole earn a better understanding of what the architecture _should be_ by working on a problem for a while.
 
+Sometimes a system turns into a big ball of mud over time.
 
-** Forces
+*** Forces that create the mud
 What are the forces that influence the creation of a ball of mud?
 
 *Time*: Sometimes you don't have time to consider long-term architectural implications.
@@ -37,8 +41,8 @@ Passivity in the face of these forces can lead to the Big Ball of Mud.
 Kent Beck on building software "Make it work. Make it right. Make it fast."
 It's OK for a system to look like a Big Ball of Mud, at least until you know better.
 
-** Fighting the mud
-*** Keep the system healthy
+*** Fighting the mud
+**** Keep the system healthy
 Lifecycle and refactoring patterns that support evolution and reuse
 `http://www.laputan.org/lifecycle/lifecycle.html`
 
@@ -49,28 +53,63 @@ Consolidation phase
 Which is basically Extreme programming (Kent Beck, `https://ronjeffries.com`)
 
 Pair programming!
-*** Reconstruction/rewrite
-*** Give in to the dark side...
+**** Reconstruction/rewrite
+**** Give in to the dark side...
 
-
-*** Throwaway code
+*** Patterns related to the ball of mud
+**** Throwaway code
 Sometimes, quick and dirty code (that was never meanted to be used more than once) grows and grows.
 
-*** Piecemeal growth
+**** Piecemeal growth
 Changing requirements, or, in the Agile process, new features, can cause the architecture to erode over time
 
-*** Keep it working
+**** Keep it working
 A major emergency requiring patching
 
-*** Shearing layers
+**** Shearing layers
 Elements of the software system evolving at different rates
 
-*** Sweeping it under the rug
+**** Sweeping it under the rug
 A method to control decline. Put a facade around bad code, and cordon it off.
 
-*** Reconstruction
+**** Reconstruction
 Rebuild the whole damn thing.
 
 
 
 _Monolithic Hell_:
+
+
+Stuff
+
+* Quick summary
+
+1.1 Describes what a Monolith is. Provides an example and discusses pain points
+    1.1.1 Concrete example of FTG's monolithic architecture
+    1.1.2 A monolith was the right thing for FTG at first, because of it's simplicity
+    1.1.3 The monolith created these problems: complexity, application size, commit-> deploy time, scaling, app reliability, locked into old tech
+   
+1.4 Defines what a Microservice is and how to think about Microservice Architecture
+    1.4.1 M.A. is a form of scaling. The author uses Martin Abbott and Michael Fisher's idea from "The art of scalability" - think about scaling as  a scale-cube where X is scaling by cloning, Z is scaling by partitioning, and Y (Microservice Architecture) is splitting by function/ functional decomposition
+    1.4.2 M.A. enforces modularity. Each service's API is an impermeable boundary, that encapsulates the module/service
+    1.4.3 A key part of M.A. is loose coupling (services are independent of other services, so changes can be made to one without affecting others). This requires each service to have its own database.
+    1.4.4 How FTG's application would look as a Microservice
+    1.4.5 Microservice Architecture is NOT SOA
+   
+1.5 Enumerating key benefits/drawbacks of M.A.
+    1.5.1 Benefits: Enables Continuous delivery/deployment. Code base is smaller, so it doesnt slow down IDE or deployment. Services are independently scalable and can be designed to meet specific needs (compute/memory). Fault isolation - a memory leak in one service only affects that service. Easier to do prototyping.
+    1.5.2 Drawbacks: Decomposition is difficult. Distributed systems have inherent complexity (service unavailability, high latency). Data operations across services is challenging. Operational complexity is HIGH. Deployment can require coordination.
+
+1.6 Defines a pattern language - a set of vocabulary used to talk about the architectural decisions and tradeoffs.
+    1.6.1 Microservices are not a silver bullet, so we need a balanced way to discuss them (pros and cons). That's the motivation for using the pattern language.
+    1.6.2 This book borrows from other software literature (think Gang of Four), which adapted Christopher Alexander's "A Pattern Language: Towns, Buildings, Construction".
+    A pattern is a reusable solution to a problem, that describes competing forces, resulting context (benefits drawbacks issues), and related patterns.
+    1.6.3
+
+
+
+Discussion questions:
+1) What is the resulting context of a pattern?
+2) How can patterns be related? What re the pattern relationshipsS?
+3) What is a pattern language?
+4) How have pattern languages been used in the software community? How have they been used outside the software community?
