@@ -1,0 +1,44 @@
+#+TITLE: Booting
+
+UEFI vs BIOS
+
+Legacy BIOS. Read only or Flash memory chip on Computer's motherboard. This is the firmware. Checks settings stored in CMOS chip. Initializes CPU Ram, Graphics, Peripherals etc. Checks for Bootable device.
+
+BIOS built into motherboard
+BIOS runs P.O.S.T.
+Can find beep codes on the BIOS documentation
+BIOS is on a non-volatile chip
+
+Settings stored in CMOS (complementary metal oxide semiconductor) chip:
+- Like date/time
+- Boot sequence
+- Hardware settings
+
+CMOS has a battery so that the above can be saved.
+
+Limitations of Legacy BIOS - came out in 80s
+1) Cannot handle partitions larger than 2TB
+
+
+UEFI - late 2000s
+1) Can handle partitions larger than 2TB
+
+Differences between UEFI and Legacy BIOS
+https://www.youtube.com/watch?v=4Byg1MReCKI
+
+Bootloaders:
+
+Windows boot Boot MGR: ~500MB
+GRUB - capable of Legacy and UEFI
+/boot/efi formatted as FAT
+GPT drive set up at 2048 (memory location?)
+
+* Questions:
+1) What is the difference between BIOS and CMOS?
+2) What does BIOS do?
+3) How many partitions can you have for Legacy Boot?
+
+* Answers
+1) CMOS is a chip that stores settings used by the BIOS. BIOS is a Basic Input Output System. firmware that is used to boot the computer.
+2)
+3) 4 maximum.
