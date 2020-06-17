@@ -1,0 +1,9 @@
+#+TITLE: Layered Vs Hexagonal
+
+* Comparison of layered vs hexagonal
+** Simon Brown opinion
+These two architectures can be substantially similar. If you make all types public, the only real difference is organization. To get the most out of the Hexagonal Architecture, you need to also use encapsulation (making some things inaccessible to programmers.)
+
+* References
+[1] Simon brown, creator of C4 software architecture model. Blog post describing differences between hexagonal (port and adapter), layered, feature packages and components.
+http://www.codingthearchitecture.com/2016/04/25/layers_hexagons_features_and_components.html
