@@ -1,0 +1,51 @@
+#+TITLE: Graca Overview
+
+https://herbertograca.com/2017/07/03/the-software-architecture-chronicles/
+
+Herberto Graca
+
+Posts in The Software Architecture Chronicles
+
+    The Software Architecture Chronicles
+    Software Architecture Premises
+    Programming Language evolution
+    Architectural Styles vs. Architectural Patterns vs. Design Patterns
+    Monolithic Architecture
+    Layered Architecture
+    MVC and its alternatives
+        1979 – Model-View-Controller
+        1987/2000 – PAC / Hierarchical Model-View-Controller
+        1996 – Model-View-Presenter
+        1998 –”Model 1″ & “Model 2”
+        2005 – Model-View-ViewModel
+        ???? – Model-View-Presenter-ViewModel
+        2008 – Resource-Method-Representation
+        2014 – Action-Domain-Responder
+    EBI Architecture
+    Packaging & namespacing
+    Domain-Driven Design
+    Ports & Adapters Architecture (aka Hexagonal Architecture)
+    Onion Architecture
+    Clean Architecture
+    Event-Driven Architecture
+    From CQS to CQRS
+    Service Oriented Architecture (SOA)
+    Explicit Architecture #01: DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together
+    Explicit Architecture #02: More than concentric layers
+    Explicit Architecture #03: Reflecting architecture and domain in code
+    Explicit Architecture #04: Documenting the architecture
+    Evolving a project: from MVP to P
+    4 + 1 Architecture view model
+    Architecture quality attributes
+
+
+* Architectural Styles vs. Architectural Patterns vs. Design Patterns
+The key difference between Architectural Styles and Architectural Patterns is scope.
+
+Author draws heavily from:
+https://www.georgefairbanks.com/blog/architecture-patterns-vs-architectural-styles/
+
+https://stackoverflow.com/questions/3958316/whats-the-difference-between-architectural-patterns-and-architectural-styles
+
+Architectural Styles tell us how to organize our code. This is the highest level of granularity
+Architectural Patterns solve a problem introduced by a particular Architectural Style

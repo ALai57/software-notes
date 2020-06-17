@@ -1,0 +1,86 @@
+#+TITLE: Styles, Patterns, Design
+
+* What exactly is Architecture?
+
+** Len Bass, Paul Clements, Rick Kazman/SEI definition
+[5] Len Bass, SEI at CMU: "The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them and properties of both."
+
+Architecture is an abstraction that is necessary because we don't want to reason about the entire system all the time. We need to be able to ignore certain features, or just focus our attention on specific parts. Architecture selects certain details to emphasize about a system, and DEEMPHASIZES other features in order to support reasoning around the system.
+
+Architecture is a set of software structures that is useful for reasoning about the system and its properties. Things like a single line of code are probably NOT architecture, because they don't allow you to reason about the SYSTEM.
+
+Architecture has many different angles, called views. Consider this analogy: when discussing the human body, you can look just at the skeleton, at vascular structures, at psychology/behavior, or at Neurons, to name a few views. Software architecture is no different, you can discuss different facets of the architecture by focusing in on a set of elements to care about, so you don't need to reason about EVERYTHING at once.
+
+In this book, the authors use a 3 view model, with Modules as pieces of executable code/logic, Component-and-connectors as runtime behavior, (almost like a process view/implementation view in 4+1 view model), and allocation view, which relates how the software relates to hardware or teams.
+
+There are 3 types of structures.
+1) Modules: Static code. Specific computational responsibilities. Some structures used to describe the Module view -
+   - Decomposition structure. splits a module up into smaller and smaller submodules until they can all be understood easily
+   - Uses structure. splits up a module by looking at which modules require other modules
+   - Layer structure. split up a module by defining layers and the layer interfaces
+   - Class. Inheritance diagrams
+   - Data model. How is data related to other data?
+2) C&C: Dynamic code. Processes, or threads.
+3) Allocation: Hardware, files, processors, disks
+
+
+* Architectural Style
+
+* Architectural Patterns
+* Design Patterns
+
+* Examples of architectural styles
+
+[3] Architectural Style
+___________________________________________________________________________________________________________________
+*Shared Memory*
+1. Blackboard
+2. Data-centric
+3. Rule-based
+___________________________________________________________________________________________________________________
+*Distributed System*
+1. Client-server
+2. Space based architecture
+3. Peer-to-peer
+4. Shared nothing architecture
+5. Broker
+6. Representational state transfer
+7. Service-oriented
+___________________________________________________________________________________________________________________
+*Messaging*
+1. Event-driven
+2. Asynchronous messaging
+3. .Publish-subscribe
+__________________________________________________________________________________________________________________
+*Structure*
+1. Component-based
+2. Pipes and filters
+3. Monolithic application based
+4. Layered
+__________________________________________________________________________________________________________________
+*Adaptable System*
+1. Plug-ins
+2. Reflection
+3. Microkernel
+__________________________________________________________________________________________________________________
+*Modern System*
+1. Architecture for Grid Computing
+2. Multi-tenancy Architecture
+3. Architecture for Big-Data
+____________________________________________________________________________________________
+
+
+* References
+
+[1] Mohamed Sami personal website - Samy is an enterprise architect at Cambridge investment research. https://melsatar.blog/2017/07/02/architectural-styles-architecture-patterns-design-patterns-and-language-idioms/
+[2] Jing Zhang Lecture notes.
+http://jz81.github.io/course/sa/sa.html
+[3] A complete survey on software Architectural Styles and Patterns - Sharma Agarwalo
+[4] George Fairbanks website - SATURN 2014 talk.
+https://www.georgefairbanks.com/blog/architecture-patterns-vs-architectural-styles/
+[5] Bass, Software Architecture in Practice 3rd ed
+
+* Cool stuff
+{1} Documenting architecture using Plant and a REPL https://danlebrero.com/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/
+{2} Architecture in Functional languages - some advice for making clean architecture
+https://stackoverflow.com/questions/2003487/architectural-thinking-in-functional-languages
